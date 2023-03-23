@@ -6,10 +6,8 @@ from email.message import EmailMessage
 import os
 import sqlite3
 import requests
-import getpass
 import json
 import win32crypt
-import requests
 import os
 from tabulate import tabulate
 from urllib.request import urlopen
