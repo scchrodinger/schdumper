@@ -10,7 +10,7 @@ python3 schdumper.py
 !! But before using fill out the email data config in the code with your data.
 
 This data dump includes;
-  * IP information(which is kinda skiddy)
+  * IP information(which is kinda pointless)
   * Website Cookies
   * Wifi Passwords
   * Google saved passwords
