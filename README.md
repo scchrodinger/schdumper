@@ -14,7 +14,3 @@ This data dump includes;
   * Website Cookies
   * Wifi Passwords
   * Google saved passwords
-
-## Disclaimer
-
-I do NOT accept any responsibilities and if you will end up in jail if you use this code for malicious purposes.
